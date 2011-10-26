@@ -25,4 +25,5 @@ user_ids.each do |user_id|
   File.open("#{file_prefix}#{user_id}.txt", "a+") do |f|
     f.syswrite("#{Yajl::Encoder.encode(response.body)}\n")
   end
+  puts "successfully fetched data for #{json[:screen_name]}"
 end
